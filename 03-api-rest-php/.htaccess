@@ -1,0 +1,27 @@
+# Crear la conversión de ruta o routes de forma 
+# que el navegador permita url amigable
+# Dentro del directorio v1
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ %{ENV:BASE}app.php [QSA,L]
+
+
+# ([0-9]+) expresión regular parámetros números
+# Fuera del directorio v1
+
+RewriteEngine On
+RewriteRule ^v1/productos/?$ v1/app.php
+RewriteRule ^v1/productos/([0-9]+)?$ v1/app.php?codigo=$1
+#RewriteRule ^v1/productos/(.*)?$ v1/app.php?codigo=$1
+
+#RewriteEngine On
+#RewriteRule ^api/students/?$ api/app.php
+#RewriteRule ^api/students/([0-9]+)?$ api/app.php?id=$1
+
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ %{ENV:BASE}index.php [QSA,L]
+
+
+
